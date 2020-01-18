@@ -9,9 +9,9 @@
     "dev:css": "postcss app/css/index.css -o app/bundle.css -w",
     "dev:server": "browser-sync start --server 'app' --files 'app/index.html,app/bundle.css,app/bundle.js' --no-open",
     "build:pre:js": "rollup -c --environment NODE_ENV:production",
-    "build:pre:css": "postcss app/css/index.css -o dist/bundle.css",
-    "build:post:copy": "cp app/index.html dist/index.html && cp -R app/assets dist/assets",
-    "build": "rm -rf dist && concurrently npm:build:pre:* && concurrently npm:build:post:*",
+    "build:pre:css": "postcss app/css/index.css -o public/bundle.css",
+    "build:post:copy": "cp app/index.html public/index.html && cp -R app/assets public/assets",
+    "build": "rm -rf public && concurrently npm:build:pre:* && concurrently npm:build:post:*",
     "start": "concurrently --kill-others npm:dev:*"
   },
   "license": "ISC",
