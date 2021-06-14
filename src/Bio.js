@@ -46,7 +46,7 @@ const Bio = () => {
         design.
       </motion.span>
       <motion.span variants={childVariants}>
-        Currently I'm building stuff at Deutche Telekom IT Solutions.
+        Currently I'm building stuff at Visma Labs.
       </motion.span>
     </motion.div>
   );
