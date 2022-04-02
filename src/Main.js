@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Contact from './Contact';
 import Bio from './Bio';
 import Github from './Github';
+import Reading from './Reading';
 
 const Main = () => {
   const [selected, setSelected] = useState(null);
@@ -16,6 +17,8 @@ const Main = () => {
         return <Github />;
       case 'contact':
         return <Contact />;
+      case 'reading':
+        return <Reading />;
       default:
         return;
     }

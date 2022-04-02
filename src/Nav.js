@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { email, githubUrl } from './constants';
+import { email, githubUrl, readingUrl } from './constants';
 
 const Social = ({ onHoverEnd, onHoverStart }) => {
   const containerVariants = {
@@ -45,7 +45,6 @@ const Social = ({ onHoverEnd, onHoverStart }) => {
       animate='visible'
     >
       <motion.a
-        title='About me'
         aria-label='About me'
         style={itemStyle}
         variants={childVariants}
@@ -56,7 +55,6 @@ const Social = ({ onHoverEnd, onHoverStart }) => {
         bio
       </motion.a>
       <motion.a
-        title='Go to my Github'
         aria-label='Go to my Github'
         href={githubUrl}
         target='_blank'
@@ -70,7 +68,17 @@ const Social = ({ onHoverEnd, onHoverStart }) => {
         github
       </motion.a>
       <motion.a
-        title='Send me an email'
+        aria-label='Books I have read'
+        href={readingUrl}
+        style={itemStyle}
+        variants={childVariants}
+        whileHover={hoverStyle}
+        onHoverStart={() => onHoverStart('reading')}
+        onHoverEnd={onHoverEnd}
+      >
+        reading
+      </motion.a>
+      <motion.a
         aria-label={`Send me an email to ${email}`}
         href={`mailto:${email}`}
         style={itemStyle}
