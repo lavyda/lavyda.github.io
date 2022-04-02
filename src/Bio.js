@@ -39,7 +39,7 @@ const Bio = () => {
       exit='hidden'
     >
       <motion.span variants={childVariants}>
-        Hey, I'm Vladmir and I'm software engineer.
+        Hey, I'm Vladmir and I'm software developer.
       </motion.span>
       <motion.span variants={childVariants}>
         I like problem solving and I'm passionate about user experience and

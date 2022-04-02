@@ -4,7 +4,6 @@ import Nav from './Nav';
 import Contact from './Contact';
 import Bio from './Bio';
 import Github from './Github';
-import './glitch.css';
 
 const Main = () => {
   const [selected, setSelected] = useState(null);
@@ -79,14 +78,13 @@ const Main = () => {
             aria-level='2'
             initial={{ y: '-100%' }}
             animate={{ y: 0 }}
-            className='glitch'
-            data-glitch='creative software engineer'
             style={{
               fontFamily: 'Nothing You Could Do',
               fontSize: '5vh',
+              color: 'var(--accent-color)'
             }}
           >
-            creative software engineer
+            creative software developer
           </motion.div>
         </div>
       </div>
