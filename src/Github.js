@@ -1,7 +1,20 @@
 import { motion } from 'framer-motion';
+import { githubUrl } from './constants';
 
 const Github = () => (
-  <div style={{ display: 'flex' }}>
+  <motion.a
+    href={githubUrl}
+    target='_blank'
+    rel='noreferrer'
+    style={{
+      display: 'flex',
+      color: 'white',
+      textDecoration: 'none',
+    }}
+    whileHover={{
+      textDecoration: 'underline',
+    }}
+  >
     <motion.code
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -23,7 +36,7 @@ const Github = () => (
         See some of my side projects&#125;
       </motion.code>
     </div>
-  </div>
+  </motion.a>
 );
 
 export default Github;

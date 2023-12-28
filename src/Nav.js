@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
-import { email, githubUrl, readingUrl } from './constants';
 
-const Social = ({ onHoverEnd, onHoverStart }) => {
+const Social = ({ onClick }) => {
   const containerVariants = {
     hidden: {},
     visible: {
@@ -26,6 +25,8 @@ const Social = ({ onHoverEnd, onHoverStart }) => {
     color: 'white',
     textDecoration: 'none solid var(--accent-color)',
     cursor: 'pointer',
+    backgroundColor: 'transparent',
+    border: 'none'
   };
 
   const hoverStyle = {
@@ -39,56 +40,44 @@ const Social = ({ onHoverEnd, onHoverStart }) => {
         display: 'flex',
         justifyContent: 'center',
         gap: '4ch',
+        flexWrap: 'wrap',
       }}
       variants={containerVariants}
       initial='hidden'
       animate='visible'
     >
-      <motion.a
-        aria-label='About me'
+      <motion.button
         style={itemStyle}
         variants={childVariants}
         whileHover={hoverStyle}
-        onHoverStart={() => onHoverStart('bio')}
-        onHoverEnd={onHoverEnd}
+        onClick={() => onClick('bio')}
       >
         bio
-      </motion.a>
-      <motion.a
-        aria-label='Go to my Github'
-        href={githubUrl}
-        target='_blank'
-        rel='noreferrer'
+      </motion.button>
+      <motion.button
         style={itemStyle}
         variants={childVariants}
         whileHover={hoverStyle}
-        onHoverStart={() => onHoverStart('github')}
-        onHoverEnd={onHoverEnd}
+        onClick={() => onClick('github')}
       >
         github
-      </motion.a>
-      <motion.a
-        aria-label='Books I have read'
-        href={readingUrl}
+      </motion.button>
+      <motion.button
         style={itemStyle}
         variants={childVariants}
         whileHover={hoverStyle}
-        onHoverStart={() => onHoverStart('reading')}
-        onHoverEnd={onHoverEnd}
+        onClick={() => onClick('reading')}
       >
         reading
-      </motion.a>
-      <motion.a
-        aria-label={`Send me an email to ${email}`}
-        href={`mailto:${email}`}
+      </motion.button>
+      <motion.button
         style={itemStyle}
         variants={childVariants}
         whileHover={hoverStyle}
-        onHoverStart={() => onHoverStart('contact')}
-        onHoverEnd={onHoverEnd}
+        onClick={() => onClick('contact')}
       >
         contact
-      </motion.a>
+      </motion.button>
     </motion.div>
   );
 };

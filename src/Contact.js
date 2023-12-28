@@ -23,7 +23,14 @@ const Contact = () => (
       }}
     >
       Say <br />
-      {email}
+      <a 
+        style={{
+          color: 'white',
+        }}
+        href={`mailto:${email}`}
+      >
+        {email}
+      </a>
     </span>
   </motion.div>
 );

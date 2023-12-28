@@ -27,8 +27,9 @@ const Main = () => {
   return (
     <div
       style={{
-        width: '100%',
-        height: '100%',
+        width: 'calc(100% - (0.5rem * 2))',
+        height: 'calc(100% - (0.5rem * 2))',
+        padding: '0.5rem',
         display: 'grid',
         gridTemplateColumns: '1fr',
         gridTemplateRows: 'repeat(12, 1fr)',
@@ -99,8 +100,7 @@ const Main = () => {
         }}
       >
         <Nav
-          onHoverStart={(target) => setSelected(target)}
-          onHoverEnd={() => setSelected(null)}
+          onClick={(target) => setSelected(selected === target ? null : target)}
         />
       </div>
       <div

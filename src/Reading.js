@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { readingUrl } from './constants';
 
 const containerVariants = {
   hidden: {
@@ -27,10 +28,16 @@ const childVariants = {
 
 const Reading = () => (
   <div style={{ display: 'flex' }}>
-      <motion.div
+      <motion.a
+        href={readingUrl}
         style={{
           fontFamily: 'Nothing You Could Do',
           fontSize: '3.5vh',
+          color: 'white',
+          textDecoration: 'none',
+        }}
+        whileHover={{
+          textDecoration: 'underline',
         }}
         variants={containerVariants}
         initial='hidden'
@@ -42,7 +49,7 @@ const Reading = () => (
             {char}
           </motion.span>
         )}
-      </motion.div>
+      </motion.a>
   </div>
 );
 
