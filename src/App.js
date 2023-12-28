@@ -7,8 +7,11 @@ function App() {
   const [visibleGreeting, setVisibleGreeting] = useState(true);
   const [visibleMain, setVisibleMain] = useState(false);
   useEffect(() => {
-    setTimeout(() => setVisibleGreeting(false), 1500);
-    setTimeout(() => setVisibleMain(true), 1500);
+    const setVisibility = async () => {
+      setTimeout(() => setVisibleGreeting(false), 1500);
+      setTimeout(() => setVisibleMain(true), 1500);
+    }
+    setVisibility();
   });
   return (
     <>

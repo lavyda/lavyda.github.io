@@ -3,7 +3,12 @@ import { useEffect, useState } from 'react';
 
 const Greeting = () => {
   const [visible, setVisible] = useState(true);
-  useEffect(() => setTimeout(() => setVisible(false), 1000));
+  useEffect(() => {
+    const setVisibility = async () => {
+      setTimeout(() => setVisible(false), 1000)
+    }
+    setVisibility()
+  });
 
   const variants = {
     idle: {
